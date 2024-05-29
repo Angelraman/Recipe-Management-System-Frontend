@@ -1,0 +1,41 @@
+
+  <div class="container-fluid homepage">
+    <div *ngIf="info.token; else loggedOut">
+      <br>
+      <div class="text-center">
+        <h2 class="display-3">Welcome to CookBook </h2>
+        <h6><b>- “Spices, Love, and a Dash of Creativity!”</b> </h6>
+      </div>
+        <br>
+        <br>
+        <br>
+        <div class="row col-12">
+          <div class="col-4 text-center">
+            <app-recipes></app-recipes>
+          </div>
+          
+          <div class="col-8">
+            <app-search-recipe></app-search-recipe>
+            <br>
+            <br>
+            <app-popular></app-popular>
+            <br>
+          </div>
+        </div>
+     </div>
+  </div>
+
+    <ng-template #loggedOut>
+        <div class="container text-center welcome">
+          <div>
+            <br>
+            <br>
+            <h2>Welcome to CookBook - a recipe management system</h2>
+            <br>
+            <br>
+            <h4>Please login:-)</h4>
+           
+          </div>
+        </div>
+    </ng-template>
+ 

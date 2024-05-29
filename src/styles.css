@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import url(~bootstrap/dist/css/bootstrap.min.css);
+@import url(~font-awesome/css/font-awesome.css); */
+
+@import url('../node_modules/bootstrap/dist/css/bootstrap.min.css');
+@import url('../node_modules/font-awesome/css/font-awesome.css');
+
+body{
+    background-image: url('https://st2.depositphotos.com/2977159/7751/i/450/depositphotos_77519669-stock-photo-natural-wood-pattern.jpg');
+    font-family: cursive;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}

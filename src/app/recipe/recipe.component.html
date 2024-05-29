@@ -1,0 +1,82 @@
+ <!-- <p>recipe works!</p> -->
+<div *ngIf="recipe" class="container-fluid recipedetail">
+<br>
+    <div class="row">
+      <div class="col-4">
+        <app-recipes></app-recipes>
+      </div>
+      <div class="col-8">
+        <app-search-recipe></app-search-recipe>
+        <br>
+        <br>
+        <h3 class="text-center">{{recipe.recipeName}}</h3>
+        <br>
+        <br>
+        <div class="container container-table recipeimage">
+                 <img [src]="recipe.image" class="img-fluid" alt="recipe image"/>
+        </div>
+        <br>
+        <br>
+        <h4>Ingredients:</h4>
+        <br>
+        <!-- <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let ing of recipe.ingredientsList">{{ing.ingredientName}}, {{ing.quantity}}</li>
+        </ul> -->
+        <table class="table table-bordered bg-secondary">
+          <thead>
+              <tr>
+                  <th class="text-center">Ingredient</th>
+                  <th class="text-center">Quantity</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let ing of recipe.ingredientsList">
+                  <td class="text-left">{{ ing.ingredientName }}</td>
+                  <td class="text-left">{{ ing.quantity }}</td>
+              </tr>
+          </tbody>
+        </table>
+        <br>
+        <br>
+        <h4>Instructions:</h4>
+        <br>
+        <div class="border border-light rounded bg-light">
+          <ol class="orderlist">
+            <li *ngFor="let inst of instructions">{{ inst }}</li>
+          </ol> 
+        </div>
+        <br>
+        <br>
+        <h4>Serving suggestions:</h4>
+        <br>
+        <div class="border border-light rounded bg-light">
+          <ol class="orderlist">
+            <li *ngFor="let sug of suggestions">{{sug}}</li>
+          </ol>
+        </div>
+        <br>
+        <br>
+        <p class="text-right font-italic"><b>Recipe last accessed on:</b> {{recipe.lastAccessed | date:'dd MMM yyyy HH:mm:ss'}}</p>
+        <br>
+        <p class="text-right"><b>Number of times accessed:</b> {{recipe.noOfTimesAccessed}}</p>
+        <br>
+        <br>
+        <br>
+        
+        <div *ngIf="this.authority === 'admin'" class="row">
+          <div class="col-3">
+            <button type="button" class="btn btn-info"><a routerLink="/update_recipe/{{recipe.recipeId}}" style="text-decoration: none; color: white">Update recipe</a></button>
+          </div>
+          
+            <div class="col-3">
+              <button type="button" class="btn btn-danger" (click)="deleteThisRecipe()">Delete recipe</button>
+            </div>
+          
+        </div>
+        
+        <br>
+        <br>
+        <br>
+      </div>
+    </div>
+  </div>  
